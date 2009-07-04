@@ -46,6 +46,13 @@ class Noginn_RateLimit
     protected $_cache;
     
     /**
+     * Whether the cache backend if Memcache or not.
+     *
+     * @var bool
+     */
+    protected $_memcache = false;
+    
+    /**
      * Sets up the rate limit.
      *
      * @param mixed $keys 
@@ -147,7 +154,7 @@ class Noginn_RateLimit
     /**
      * Increment the counter.
      *
-     * @return void
+     * @return int The new value
      */
     public function increment()
     {
@@ -156,6 +163,7 @@ class Noginn_RateLimit
         
         // Cache the request count
         $this->getCache()->save($this->_requests[0], $this->getCacheId(), array(), $this->_period * 60);
+        return $this->_requests[0];
     }
     
     /**

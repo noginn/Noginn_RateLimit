@@ -58,7 +58,7 @@ class Noginn_RateLimitTest extends PHPUnit_Framework_TestCase
     public function testIncrement()
     {
         $rateLimit = new Noginn_RateLimit(array('127.0.0.1', 'action'), 1, 1, $this->_cache);
-        $rateLimit->increment();
+        $this->assertEquals(1, $rateLimit->increment());
         $this->assertEquals(1, $rateLimit->getRequestsForInterval(0));
     }
     
