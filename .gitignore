@@ -1,3 +1,4 @@
 .DS_Store
 library/Zend
 tests/TestConfiguration.php
+example/data/cache/*

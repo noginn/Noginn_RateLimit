@@ -69,6 +69,26 @@ class Noginn_RateLimit
     }
     
     /**
+     * Returns the limit
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->_limit;
+    }
+    
+    /**
+     * Returns the rate limit period in minutes
+     *
+     * @return int
+     */
+    public function getPeriod()
+    {
+        return $this->_period;
+    }
+    
+    /**
      * Set the cache front-end used to store the counter
      *
      * @param string|Zend_Cache_Core $cache 
