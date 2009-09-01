@@ -46,13 +46,6 @@ class Noginn_RateLimit
     protected $_cache;
     
     /**
-     * Whether the cache backend if Memcache or not.
-     *
-     * @var bool
-     */
-    protected $_memcache = false;
-    
-    /**
      * Sets up the rate limit.
      *
      * @param mixed $keys 
